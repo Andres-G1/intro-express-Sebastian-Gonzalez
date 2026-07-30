@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
 export const saludo = 'Hola, estamos aprendiendo express con la ficha 3407184';
 
@@ -12,3 +12,7 @@ app.get("/", (_, res) => {
 app.listen(port, () => {
     console.log(`Servidor en funcionamiento en el puerto: ${port}`);
 });
+
+/*
+http://localhost:3000
+*/
