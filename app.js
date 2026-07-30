@@ -17,4 +17,5 @@ app.listen(port, () => {
 http://localhost:3030
 npm install
 npm install dotenv
+npm run dev
 */
