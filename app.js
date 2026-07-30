@@ -19,10 +19,37 @@ app.get("/products", (req, res) =>{
     res.send(`<h1>Products list</h1>
         <ol>
         <li>Tv</li>
-        <li>Phone</li>
+        <li>Celphone</li>
         <li>printer</li>
         </ol>`
     )
+})
+
+app.get("/products/:name/:id/:price", (req, res) =>{
+    const product = req.params.name
+    const id_pro = req.params.id
+    const price_pro = req.params.price
+    res.send(`<h1>Product information</h1>
+        <ol>
+        <li>Product: ${product}</li>
+        <li>Id: ${id_pro}</li>
+        <li>Price: ${price_pro}</li>
+        </ol>`)
+})
+
+app.get("saludo/:name", (req, res) => {
+    const name = req.params.name 
+    res.send(`Hello ${name}`)
+})
+
+app.get("category/:Category/:id", (req, res) =>{
+    const category_pro = req.params.Category 
+    const id_category = req.params.id
+    res.send(`<h1>Category Products</h1>
+        <ol>
+        <li>Category: ${category_pro}</li>
+        <li>Id: ${id_category}</li>
+        </ol>`)
 })
 
 app.listen(port, () => {
@@ -34,4 +61,7 @@ http://localhost:3030
 npm install
 npm install dotenv
 npm run dev
+Git log == Para ver el historial de cambios"
+Git log --oneline == Para ver el historial de cambios en una sola linea"
+Git checkout codigo ==para cambiar a un commit especifico"
 */
