@@ -1,18 +1,20 @@
 import express from 'express';
+import 'dotenv/config'
 
 const app = express();
-const port = 3030;
+const port = process.env.PORT || 3000;
 
 export const saludo = 'Hola, estamos aprendiendo express con la ficha 3407184';
 
 app.get("/", (_, res) => {
     res.send(saludo);
 });
-
 app.listen(port, () => {
     console.log(`Servidor en funcionamiento en el puerto: ${port}`);
 });
 
 /*
-http://localhost:3000
+http://localhost:3030
+npm install
+npm install dotenv
 */
