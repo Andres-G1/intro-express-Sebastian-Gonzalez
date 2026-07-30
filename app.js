@@ -16,7 +16,10 @@ app.get("/", (_, res) => {
 });
 
 app.get("/products", (req, res) =>{
-    res.send(`<h1>Products list</h1>
+    
+    const order = req.query.order || "Sin orden" //http://localhost:3030/products?order=ASCENDENTE&page=20
+    const page = req.query.page || "Sin pagina"
+    res.send(`<h1>Products in order ${order} in the page ${page}</h1> 
         <ol>
         <li>Tv</li>
         <li>Celphone</li>
@@ -49,7 +52,11 @@ app.get("/category/:Category/:id", (req, res) =>{
         <ol>
         <li>Category: ${category_pro}</li>
         <li>Id: ${id_category}</li>
-        </ol>`)
+        </ol>`) 
+})
+
+app.get("/article", (req, res) =>{
+    res.json({"name" : "Sebastian", "lastname" : "Gonzalez"})
 })
 
 app.listen(port, () => {
@@ -64,4 +71,5 @@ npm run dev
 Git log == Para ver el historial de cambios"
 Git log --oneline == Para ver el historial de cambios en una sola linea"
 Git checkout codigo ==para cambiar a un commit especifico"
+http://localhost:3030/products?order=ASCENDENTE&page=20
 */
