@@ -37,12 +37,12 @@ app.get("/products/:name/:id/:price", (req, res) =>{
         </ol>`)
 })
 
-app.get("saludo/:name", (req, res) => {
+app.get("/saludo/:name", (req, res) => {
     const name = req.params.name 
     res.send(`Hello ${name}`)
 })
 
-app.get("category/:Category/:id", (req, res) =>{
+app.get("/category/:Category/:id", (req, res) =>{
     const category_pro = req.params.Category 
     const id_category = req.params.id
     res.send(`<h1>Category Products</h1>
